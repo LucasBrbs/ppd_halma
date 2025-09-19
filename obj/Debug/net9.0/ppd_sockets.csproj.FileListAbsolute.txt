@@ -1,0 +1,14 @@
+/Users/lucasbarbosadeoliveira/Documents/faculdade/ppd_sockets/bin/Debug/net9.0/ppd_sockets
+/Users/lucasbarbosadeoliveira/Documents/faculdade/ppd_sockets/bin/Debug/net9.0/ppd_sockets.deps.json
+/Users/lucasbarbosadeoliveira/Documents/faculdade/ppd_sockets/bin/Debug/net9.0/ppd_sockets.runtimeconfig.json
+/Users/lucasbarbosadeoliveira/Documents/faculdade/ppd_sockets/bin/Debug/net9.0/ppd_sockets.dll
+/Users/lucasbarbosadeoliveira/Documents/faculdade/ppd_sockets/bin/Debug/net9.0/ppd_sockets.pdb
+/Users/lucasbarbosadeoliveira/Documents/faculdade/ppd_sockets/obj/Debug/net9.0/ppd_sockets.GeneratedMSBuildEditorConfig.editorconfig
+/Users/lucasbarbosadeoliveira/Documents/faculdade/ppd_sockets/obj/Debug/net9.0/ppd_sockets.AssemblyInfoInputs.cache
+/Users/lucasbarbosadeoliveira/Documents/faculdade/ppd_sockets/obj/Debug/net9.0/ppd_sockets.AssemblyInfo.cs
+/Users/lucasbarbosadeoliveira/Documents/faculdade/ppd_sockets/obj/Debug/net9.0/ppd_sockets.csproj.CoreCompileInputs.cache
+/Users/lucasbarbosadeoliveira/Documents/faculdade/ppd_sockets/obj/Debug/net9.0/ppd_sockets.dll
+/Users/lucasbarbosadeoliveira/Documents/faculdade/ppd_sockets/obj/Debug/net9.0/refint/ppd_sockets.dll
+/Users/lucasbarbosadeoliveira/Documents/faculdade/ppd_sockets/obj/Debug/net9.0/ppd_sockets.pdb
+/Users/lucasbarbosadeoliveira/Documents/faculdade/ppd_sockets/obj/Debug/net9.0/ppd_sockets.genruntimeconfig.cache
+/Users/lucasbarbosadeoliveira/Documents/faculdade/ppd_sockets/obj/Debug/net9.0/ref/ppd_sockets.dll
