@@ -3,7 +3,7 @@
 Console.WriteLine("=== JOGO HALMA ===");
 
 // Cria o servidor local
-GameServer servidor = new GameServer();
+var servidor = new PPD_Sockets.Network.GameServer();
 servidor.IniciarServidor();
 
 Console.WriteLine();
@@ -17,7 +17,7 @@ string? opcao = Console.ReadLine();
 if (opcao == "1")
 {
     Console.WriteLine("Aguardando conexão de outro jogador...");
-    servidor.AguardarJogador();
+    await servidor.AguardarJogador();
 }
 else if (opcao == "2")
 {
@@ -31,7 +31,7 @@ else if (opcao == "2")
     }
     
     GameClient cliente = new GameClient();
-    if (cliente.ConectarServidor(ip))
+    if (await cliente.ConectarServidor(ip))
     {
         Console.WriteLine("Conectado com sucesso!");
         Console.WriteLine("Pressione qualquer tecla para desconectar...");

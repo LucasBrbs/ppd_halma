@@ -20,27 +20,35 @@ namespace PPD_Sockets.Models
 
         private void InitializePieces()
         {
-            // Inicializa as 19 peças do jogador
-            // Jogador preto começa no canto superior esquerdo
+            // Inicializa as peças do jogador em formato de escada triangular
             if (Color == PlayerColor.Black)
             {
-                // Triângulo no canto superior esquerdo (0,0 até 3,3)
-                for (int x = 0; x <= 3; x++)
+                // Jogador preto começa no canto INFERIOR DIREITO 
+                // Escada aponta para o objetivo (superior esquerdo)
+                // Formato: 1+2+3+4 = 10 peças (linha 12=1, linha 13=2, linha 14=3, linha 15=4)
+                for (int linha = 0; linha < 4; linha++)
                 {
-                    for (int y = 0; y <= 3 - x; y++)
+                    int pecasNaLinha = linha + 1; // linha 0 = 1 peça, linha 1 = 2 peças, etc.
+                    for (int coluna = 0; coluna < pecasNaLinha; coluna++)
                     {
+                        int x = 15 - coluna;  // Da direita para esquerda
+                        int y = 12 + linha;   // Linha 12, 13, 14, 15
                         Pieces.Add(new GamePiece(Color, new Position(x, y)));
                     }
                 }
             }
-            // Jogador branco começa no canto inferior direito
             else if (Color == PlayerColor.White)
             {
-                // Triângulo no canto inferior direito (12,12 até 15,15)
-                for (int x = 12; x <= 15; x++)
+                // Jogador branco começa no canto SUPERIOR ESQUERDO
+                // Escada aponta para o objetivo (inferior direito) 
+                // Formato: 4+3+2+1 = 10 peças (começando com 4, terminando com 1)
+                for (int linha = 0; linha < 4; linha++)
                 {
-                    for (int y = 12 + (x - 12); y <= 15; y++)
+                    int pecasNaLinha = 4 - linha; // linha 0 = 4 peças, linha 1 = 3 peças, etc.
+                    for (int coluna = 0; coluna < pecasNaLinha; coluna++)
                     {
+                        int x = coluna;  // Da esquerda para direita
+                        int y = linha;   // De cima para baixo
                         Pieces.Add(new GamePiece(Color, new Position(x, y)));
                     }
                 }

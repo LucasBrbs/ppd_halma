@@ -136,23 +136,89 @@ namespace PPD_Sockets.Game
 
         public void DisplayBoard()
         {
-            Console.WriteLine("   0123456789ABCDEF");
+            Console.WriteLine("=== JOGO HALMA - SERVIDOR ===");
+            Console.WriteLine();
+            Console.WriteLine("📋 COMO LER AS COORDENADAS:");
+            Console.WriteLine("   Formato: COLUNA+LINHA (ex: A0, B1, A10, P15)");
+            Console.WriteLine("   Colunas: A B C D E F G H I J K L M N O P");
+            Console.WriteLine("   Linhas:  0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15");
+            Console.WriteLine();
+            
+            // Cabeçalho com colunas mais visível
+            Console.WriteLine("    A B C D E F G H I J K L M N O P");
+            Console.WriteLine("    │ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │");
+            
             for (int y = 0; y < BOARD_SIZE; y++)
             {
-                Console.Write($"{y:X2} ");
+                Console.Write($"{y,2}──");
                 for (int x = 0; x < BOARD_SIZE; x++)
                 {
                     var piece = board[x, y];
                     if (piece == null)
                     {
-                        Console.Write(".");
+                        Console.Write("·│");
                     }
                     else
                     {
-                        Console.Write(piece.Color == PlayerColor.Black ? "●" : "○");
+                        Console.Write(piece.Color == PlayerColor.Black ? "○│" : "●│");
                     }
                 }
-                Console.WriteLine();
+                Console.WriteLine($" ←linha {y}");
+            }
+            
+            Console.WriteLine();
+            Console.WriteLine("💡 EXEMPLO: Para mover peça de coluna A linha 0 para coluna B linha 1:");
+            Console.WriteLine("   Digite: A0,B1");
+            Console.WriteLine("💡 EXEMPLO: Para mover peça de coluna A linha 10 para coluna B linha 11:");
+            Console.WriteLine("   Digite: A10,B11");
+            Console.WriteLine();
+            Console.WriteLine("🎯 OBJETIVOS:");
+            Console.WriteLine("   ● (BRANCO): Formar escada triangular no canto INFERIOR DIREITO");
+            Console.WriteLine("   ○ (PRETO): Formar escada triangular no canto SUPERIOR ESQUERDO");
+            Console.WriteLine("   Escada = 4+3+2+1 peças (10 total por jogador)");
+            Console.WriteLine();
+        }
+
+        public bool VerificarVitoria(Player jogador)
+        {
+            // Verifica se todas as peças do jogador chegaram ao lado oposto na orientação correta
+            if (jogador.Color == PlayerColor.Black)
+            {
+                // Preto precisa formar escada no canto superior esquerdo (espelhada)
+                // Formato: 1+2+3+4 crescendo da esquerda para direita
+                int pecasNaDestino = 0;
+                for (int linha = 0; linha < 4; linha++)
+                {
+                    for (int coluna = 0; coluna <= linha; coluna++)
+                    {
+                        int x = coluna;  // Da esquerda para direita
+                        int y = linha;   // De cima para baixo
+                        if (board[x, y]?.Color == PlayerColor.Black)
+                        {
+                            pecasNaDestino++;
+                        }
+                    }
+                }
+                return pecasNaDestino == 10; // 10 peças na área de destino
+            }
+            else
+            {
+                // Branco precisa formar escada no canto inferior direito (espelhada)
+                // Formato: 1+2+3+4 crescendo da direita para esquerda
+                int pecasNaDestino = 0;
+                for (int linha = 0; linha < 4; linha++)
+                {
+                    for (int coluna = 0; coluna <= linha; coluna++)
+                    {
+                        int x = 15 - coluna;  // Da direita para esquerda
+                        int y = 15 - linha;   // De baixo para cima
+                        if (board[x, y]?.Color == PlayerColor.White)
+                        {
+                            pecasNaDestino++;
+                        }
+                    }
+                }
+                return pecasNaDestino == 10; // 10 peças na área de destino
             }
         }
 
