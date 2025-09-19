@@ -12,3 +12,4 @@
 /Users/lucasbarbosadeoliveira/Documents/faculdade/ppd_sockets/obj/Debug/net9.0/ppd_sockets.pdb
 /Users/lucasbarbosadeoliveira/Documents/faculdade/ppd_sockets/obj/Debug/net9.0/ppd_sockets.genruntimeconfig.cache
 /Users/lucasbarbosadeoliveira/Documents/faculdade/ppd_sockets/obj/Debug/net9.0/ref/ppd_sockets.dll
+/Users/lucasbarbosadeoliveira/Documents/faculdade/ppd_sockets/obj/Debug/net9.0/ppd_sockets.sourcelink.json

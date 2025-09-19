@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ppd_sockets")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a256857f7af09ec089fecff46fef8ae87b7dd341")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7a146f801b474c5726f5eddb5d3f611034f2b6dd")]
 [assembly: System.Reflection.AssemblyProductAttribute("ppd_sockets")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ppd_sockets")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
